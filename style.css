@@ -1,0 +1,120 @@
+@import url("https://fonts.google.com/specimen/Poppins");
+
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  font-size: 1.3rem;
+}
+html {
+  min-width: 370px;
+}
+body {
+  background-color: var(--Very-Light-Gray);
+  font-family: "Poppins", sans-serif, serif;
+  font-weight: 200;
+  color: var(--Very-Dark-Blue);
+  margin: 0;
+}
+h2,
+b {
+  color: black;
+  font-weight: 600;
+}
+h1 {
+  font-size: clamp(1.1rem, 3vw, 1.7rem);
+  font-weight: 400;
+}
+b {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 600;
+  line-height: 0;
+}
+h2 {
+  font-size: 1rem;
+}
+p {
+  font-size: 0.8rem;
+}
+img {
+  display: block;
+  margin-left: auto;
+}
+header {
+  width: min(80%, 570px);
+  margin: 60px auto;
+  text-align: center;
+}
+
+main {
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-rows: repeat(4, 260px);
+  justify-content: center;
+  display: grid;
+  margin-bottom: 160px;
+  gap: 3%;
+}
+
+main section {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 9px solid transparent;
+  border-top: 3px solid;
+  box-shadow: 0px 15px 7px hsla(0, 1%, 48%, 0.2);
+}
+main div {
+  height: 85%;
+  width: 90%;
+}
+main section:nth-child(1) {
+  border-top-color: var(--Cyan);
+}
+
+main section:nth-child(2) {
+  border-top-color: var(--Red);
+}
+main section:nth-child(3) {
+  border-top-color: var(--Orange);
+}
+main section:nth-child(4) {
+  border-top-color: var(--Blue);
+}
+@media screen and (min-width: 900px) {
+  main {
+    grid-template-columns: repeat(2, 380px);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main {
+    grid-template-columns: repeat(auto-fit, 380px);
+    grid-template-rows: repeat(4, 115px);
+    gap: 2%;
+    row-gap: 7%;
+  }
+  main section:nth-child(1) {
+    grid-row: 2/4;
+  }
+  main section:nth-child(2) {
+    border-top-color: var(--Red);
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+  main section:nth-child(3) {
+    border-top-color: var(--Orange);
+    grid-column: 2/3;
+    grid-row: 3/5;
+  }
+  main section:nth-child(4) {
+    border-top-color: var(--Blue);
+    grid-column: 3/4;
+    grid-row: 2/4;
+  }
+}
